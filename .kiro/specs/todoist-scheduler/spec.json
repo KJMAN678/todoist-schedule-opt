@@ -1,0 +1,12 @@
+{
+  "feature": "todoist-scheduler",
+  "title": "Todoist タスク最適スケジューリング",
+  "language": "ja",
+  "status": "in-progress",
+  "created": "2026-05-09",
+  "stack": {
+    "language": "Python 3.13",
+    "package_manager": "uv",
+    "dependencies": ["mcp==1.27.0", "ortools==9.15.6755"]
+  }
+}

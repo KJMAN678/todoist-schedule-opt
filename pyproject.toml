@@ -1,0 +1,20 @@
+[project]
+name = "todoist"
+version = "0.1.0"
+description = "todoist管理のタスクにスケジュール最適化実行"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "mcp==1.27.0",
+    "ortools==9.15.6755",
+]
+
+[dependency-groups]
+dev = [
+    "pytest==9.0.3",
+    "ruff==0.15.12",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
