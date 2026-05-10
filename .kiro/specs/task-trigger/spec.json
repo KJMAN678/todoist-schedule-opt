@@ -1,0 +1,24 @@
+{
+  "feature": "task-trigger",
+  "title": "Todoist タスクトリガー — launchd × Claude Code 自動実行",
+  "language": "ja",
+  "status": "design-generated",
+  "approvals": {
+    "requirements": {
+      "generated": true,
+      "approved": true
+    },
+    "design": {
+      "generated": true,
+      "approved": false
+    }
+  },
+  "updated_at": "2026-05-10T00:00:00+09:00",
+  "created": "2026-05-10T00:00:00+09:00",
+  "stack": {
+    "language": "Python 3.13",
+    "package_manager": "uv",
+    "scheduler": "macOS launchd (plist)",
+    "dependencies": ["mcp==1.27.0"]
+  }
+}

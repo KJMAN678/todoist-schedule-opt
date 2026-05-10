@@ -1,0 +1,8 @@
+# Todoist task-trigger — 15分ごとに実行
+# 設定方法: crontab -e を実行し、下の行をコピーして貼り付ける
+# uv のパスは `which uv` で確認すること
+#
+# */15 * * * * cd /path/to/todoist && /path/to/uv run python task_trigger.py >> /tmp/task-trigger-cron.log 2>&1
+#
+# 例（パスを実際のものに変更すること）:
+*/15 * * * * cd /Users/yourname/data/todoist && /Users/yourname/.local/bin/uv run python task_trigger.py >> /tmp/task-trigger-cron.log 2>&1

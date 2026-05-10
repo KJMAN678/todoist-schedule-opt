@@ -10,16 +10,23 @@ class TodoistClient:
     def __init__(self, session: ClientSession):
         self._session = session
 
-    async def fetch_tasks(self, project_id: str, limit: int = 100) -> list[dict]:
-        result = await self._session.call_tool(
-            "find-tasks", {"projectId": project_id, "limit": limit}
-        )
+    async def fetch_tasks(self, project_id: str | None = None, limit: int = 100) -> list[dict]:
+        args: dict = {"limit": limit}
+        if project_id is not None:
+            args["projectId"] = project_id
+        result = await self._session.call_tool("find-tasks", args)
         return result.structuredContent["tasks"]
 
     async def update_task_due(self, task_id: str, due_string: str) -> None:
         await self._session.call_tool(
             "update-tasks", {"tasks": [{"id": task_id, "dueString": due_string}]}
         )
+
+    async def fetch_comments(self, task_id: str) -> list[dict]:
+        result = await self._session.call_tool(
+            "find-comments", {"taskId": task_id}
+        )
+        return result.structuredContent["comments"]
 
 
 @asynccontextmanager
